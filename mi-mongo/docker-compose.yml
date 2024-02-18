@@ -10,11 +10,11 @@ services:
     image: mongo
 
   mi-mongo-express-2:
-    container_name: mi-mongo-express2
+    container_name: mi-mongo-express-2
     networks:
       - mi-red
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mi-mongo2
+      - ME_CONFIG_MONGODB_SERVER=mi-mongo-2
     ports:
       - 8081:8081
     stdin_open: true 

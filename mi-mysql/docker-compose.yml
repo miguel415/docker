@@ -2,9 +2,9 @@ services:
   mi-mysql-2:
     container_name: mi-mysql-2
     networks:
-      - mi-mysql-red2
+      - mi-mysql-red-2
     volumes:
-      - mi-mysql-vol2:/data/db
+      - mi-mysql-vol-2:/data/db
     environment:
       - MYSQL_ROOT_PASSWORD=pass
     stdin_open: true 
@@ -14,7 +14,7 @@ services:
   mi-dashboard-2:
     container_name: mi-dashboard-2
     networks:
-      - mi-mysql-red2
+      - mi-mysql-red-2
     environment:
       - PMA_HOST=mi-mysql-2
     ports:
