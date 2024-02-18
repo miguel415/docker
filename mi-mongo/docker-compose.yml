@@ -1,6 +1,6 @@
 services:
-  mi-mongo-2:
-    container_name: mi-mongo-2
+  mi-mongo2:
+    container_name: mi-mongo2
     networks:
       - mi-red
     volumes:
@@ -9,12 +9,12 @@ services:
     tty: true 
     image: mongo
 
-  mi-mongo-express-2:
-    container_name: mi-mongo-express-2
+  mi-mongo-express2:
+    container_name: mi-mongo-express2
     networks:
       - mi-red
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mi-mongo-2
+      - ME_CONFIG_MONGODB_SERVER=mi-mongo2
     ports:
       - 8081:8081
     stdin_open: true 
