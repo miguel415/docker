@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
     image: mi-node-image
     expose:
-      - "3000"
+      - "8080"
     networks:
       - mongo-node-net
       - node-nginx-net
@@ -23,6 +23,8 @@ services:
     image: nginx
     ports:
       - "80:80"
+    stdin_open: true
+    tty: true
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     networks:
@@ -31,11 +33,13 @@ services:
 networks:
   mongo-node-net:
     ipam:
+      driver: default
       config:
         - subnet: 172.40.0.0/16
 
   node-nginx-net:
     ipam:
+      driver: default
       config:
         - subnet: 172.80.0.0/16
 
