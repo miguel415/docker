@@ -24,7 +24,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - nginx.conf
+      - docker/examen/ejercicio2/nginx.conf
     networks:
       - node-nginx-net
 
